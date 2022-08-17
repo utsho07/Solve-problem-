@@ -1,0 +1,60 @@
+#include <bits/stdc++.h>
+using namespace std;
+void printbinary(int num)
+{
+    for (int i = 10; i >= 0; i--)
+    {
+        cout << ((num >> i) & 1);
+    }
+}
+
+int setbit(int vaule, int bit)
+{
+    return (vaule | (1 << bit));
+}
+int unsetbit(int data, int bit)
+{
+    return (data & ~(1 << bit));
+}
+int main()
+{
+    int n;
+    cout << "Enter a number which you want to binary" << endl;
+    cin >> n;
+    int a = n;
+    cout << "The binary form is " << endl;
+    printbinary(n);
+    cout << endl;
+    int i;
+    cout << "Enter which bit you want to cheak " << endl;
+    cin >> i;
+    if ((a & (1 << i)) != 0)
+    {
+        cout << "The bit is set " << endl;
+    }
+    else
+        cout << "The bit is not set" << endl;
+
+    cout << "Enter the number which you want to set " << endl;
+    int k;
+    cin >> k;
+    cout << "After set the " << k << "th bit the answer is " << endl;
+    // printbinary((n | (1 << k)));
+    int m = setbit(n, k);
+    printbinary(m);
+    cout << endl;
+
+    // if we want to unset any bit then we need to follow the bellow posidure
+
+    cout << "Enter which bit you want to unset " << endl;
+    int l;
+    cin >> l;
+    printbinary(unsetbit(n, l));
+    cout << endl;
+    // toggle any bit in
+    //  toggle mean we will convert 0 to 1 and 1 to 0
+    cout << "Enter the bit you want to toggle " << endl;
+    int o;
+    cin >> o;
+    printbinary(n ^ (1 << o));
+}
