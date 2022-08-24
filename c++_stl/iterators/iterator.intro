@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int> v = {2, 3, 4, 6, 7};
+    vector<int>::iterator it;
+    // if we point the itreator to the vector begining then it point the first element of the vector..++ will point the next element;
+
+    /* it = v.begin();
+     cout << (*it) << endl;
+     it++;
+     cout << (*it) << endl;*/
+    for (it = v.begin(); it < v.end(); it++)
+    {
+        cout << (*it) << " ";
+    }
+    cout << endl
+         << endl
+         << endl;
+    // cout << (*it) << endl;
+    vector<pair<int, int>> v2 = {{2, 3}, {4, 5}, {6, 7}};
+    vector<pair<int, int>>::iterator it1;
+    for (it1 = v2.begin(); it1 < v2.end(); (it1)++)
+    {
+        cout << (*it1).first << " " << (*it1).second << endl;
+    }
+
+    // Writng the iterator in short...c++11 vertion feature
+    // range base loop..
+    cout << endl
+         << endl
+         << endl;
+    for (int vaule : v)
+    {
+        cout << vaule << " ";
+    }
+    cout << endl;
+    // printing the pair using the vaule range base loop
+    for (pair<int, int> value : v2)
+    {
+        cout << value.first << " " << value.second << endl;
+    }
+    cout << endl
+         << endl;
+    // using auto keyword
+    for (auto it = v.begin(); it < v.end(); it++)
+    {
+        cout << (*it) << " ";
+    }
+    cout << endl;
+
+    // print the pair using auto
+    for (auto it2 = v2.begin(); it2 < v2.end(); (it2)++)
+    {
+        cout << (*it2).first << " " << (*it2).second << endl;
+    }
+
+    vector<int> v4 = {1, 2, 3, 4, 5};
+    for (auto value : v4)
+    {
+        cout << value << " ";
+    }
+    return 0;
+}
