@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+void printvec(vector<int> v)
+{
+    for (int i = 0; i < v.size(); ++i)
+    {
+        cout << v[i] << " ";
+    }
+}
+
+int main()
+{
+    // vector is continuous memory allocation.
+    // work also similar like array..
+    // if we use vector as an array we dont need to declear array or vector size...........
+    vector<int> v;
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; ++i)
+    {
+        int x;
+        cin >> x;
+        v.push_back(x);
+    }
+    printvec(v);
+    cout << endl;
+    v.pop_back();
+    printvec(v);
+    //copy a vector to a another vector.............
+    vector<int> v2 = v;
+    v.pop_back();
+    v.pop_back();
+    cout << "Before copying " << endl;
+    printvec(v);
+    cout << endl;
+    cout << "v2 as a copy function " << endl;
+    printvec(v2);
+    // vector<int> v(10, 3);
+    // printvec(v);
+    //we can take any kind of data as a input in vector.
+    
+    return 0;
+}
