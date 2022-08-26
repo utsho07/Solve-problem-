@@ -1,0 +1,29 @@
+/* you are given a N number
+you have to take s sting and then you have to search the k string in present in the string or not.. */
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    unordered_set<string> s;
+    while (n--)
+    {
+        string m;
+        cin >> m;
+        s.insert(m);
+    }
+    cout << "Enter how many time you want to cheak" << endl;
+    int k;
+    cin >> k;
+    while (k--)
+    {
+        string str;
+        cin >> str;
+        if (s.find(str) == s.end())
+            cout << "NO" << endl;
+        else
+            cout << "YES" << endl;
+    } 
+}
